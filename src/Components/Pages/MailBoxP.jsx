@@ -17,7 +17,7 @@ const MailBoxP = () => {
     status: "Money Receipt",
     details: "Lorem ipsum dolor sit amet, consectetur adipiscing elit...",
     time: "12:22 PM",
-    avatar: "https://via.placeholder.com/40",
+    avatar: `https://images.unsplash.com/photo-1521566652839-697aa473761a?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D`,
   });
   return (
     <div className="bg-[#F3F4F3] pb-10 ">
@@ -115,12 +115,13 @@ const MailBoxP = () => {
               <div className="text-gray-500 py-7">
                 <h1>Showing 1 to 10 of 10 entries</h1>
               </div>
-              <div className="flex gap-3 items-center group">
-                <FaArrowLeft className="text-gray-500 text-sm   " />
-                <button className="bg-blue-500 px-3 py-1">1</button>
-                <button className="hover:bg-blue-500 px-3 py-2.5 hover:text-white">
-                  
-                  <FaArrowRight className="text-gray-500 text-sm " />
+              <div className="flex gap-3 items-center ">
+                <div className="px-3 py-2.5 ">
+                  <FaArrowLeft className="text-gray-500 text-sm  hover:bg-blue-500 " />
+                </div>
+                <button className="bg-blue-500 text-white px-3 py-1">1</button>
+                <button className="hover:bg-blue-500 px-3 py-2.5 ">
+                  <FaArrowRight className="text-gray-500 text-sm hover:text-white" />
                 </button>
               </div>
             </div>
