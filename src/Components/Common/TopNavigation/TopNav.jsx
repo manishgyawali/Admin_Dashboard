@@ -3,7 +3,7 @@ import { FaSearch, FaBell, FaEnvelope } from "react-icons/fa";
 
 const TopNav = () => {
   return (
-    <nav className="bg-white shadow-sm py-4 px-6 flex items-center justify-between">
+    <nav className=" shadow-sm py-6 px-6 flex items-center justify-between">
   
       <div className="flex items-center gap-4">
         <div className="relative">

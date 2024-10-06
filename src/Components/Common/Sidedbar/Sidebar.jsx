@@ -1,5 +1,23 @@
 import React, { useState } from "react";
-import { FaHome, FaAppStore, FaClipboardList, FaWpforms, FaTrello, FaFileInvoiceDollar, FaCalendarAlt, FaBoxOpen, FaIcons, FaFilm, FaCog, FaTable, FaThList, FaMapMarkedAlt, FaFileAlt, FaChevronDown, FaChevronUp } from "react-icons/fa";
+import {
+  FaHome,
+  FaAppStore,
+  FaClipboardList,
+  FaWpforms,
+  FaTrello,
+  FaFileInvoiceDollar,
+  FaCalendarAlt,
+  FaBoxOpen,
+  FaIcons,
+  FaFilm,
+  FaCog,
+  FaTable,
+  FaThList,
+  FaMapMarkedAlt,
+  FaFileAlt,
+  FaChevronDown,
+  FaChevronUp,
+} from "react-icons/fa";
 import { Link } from "react-router-dom";
 const Sidebar = () => {
   // State for toggling dropdowns
@@ -51,8 +69,11 @@ const Sidebar = () => {
             </div>
             {isAppsOpen && (
               <div className="ml-8 flex flex-col gap-3">
-                <h1>App 1</h1>
-                <h1>App 2</h1>
+                <Link to="/editorp">Editor</Link>
+                <Link to="/mailboxp">Mail Box</Link>
+                <Link to="/chatp">Chat</Link>
+                <Link to="/faqp">FAQ</Link>
+
               </div>
             )}
           </div>
