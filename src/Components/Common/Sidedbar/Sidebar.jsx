@@ -92,8 +92,21 @@ const Sidebar = () => {
             </div>
             {isUiKitsOpen && (
               <div className="ml-8 flex flex-col gap-3">
-                <h1>UI Kit 1</h1>
-                <h1>UI Kit 2</h1>
+                <Link to="/colors">Colors</Link>
+                <Link to="/alerts">Alerts</Link>
+                <Link to="/buttons">Buttons</Link>
+                <Link to="/modal">Modal</Link>
+                <Link to="/dropdowns">Dropdowns</Link>
+                <Link to="/badges">Badges</Link>
+                <Link to="/loadingindicators">Loading Indicators</Link>
+                <Link to="/statecolor">State Color</Link>
+                <Link to="/typography">Typography</Link>
+                <Link to="/datepicker">Date Picker</Link>
+
+
+
+
+
               </div>
             )}
           </div>

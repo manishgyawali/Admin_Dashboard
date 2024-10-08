@@ -10,6 +10,16 @@ import EditorP from './Components/Pages/EditorP';
 import MailBoxP from './Components/Pages/MailBoxP';
 import ChatP from "./Components/Pages/ChatP";
 import FaqP from './Components/Pages/FaqP';
+import Colors from './Components/Pages/Ui kits/Colors';
+import Typography from './Components/Pages/Ui kits/Typography';
+import StateColor from './Components/Pages/Ui kits/StateColor';
+import Modal from './Components/Pages/Ui kits/Modal';
+import LOadingIndicators from './Components/Pages/Ui kits/LOadingIndicators';
+import DatePicker from './Components/Pages/Ui kits/DatePicker';
+import Badges from './Components/Pages/Ui kits/Badges';
+import Alerts from './Components/Pages/Ui kits/Alerts';
+import Dropdowns from './Components/Pages/Ui kits/Dropdowns';
+import Buttons from './Components/Pages/Ui kits/Buttons';
 
 function App() {
   return (
@@ -31,6 +41,17 @@ function App() {
               <Route path="/mailboxp" element={<MailBoxP />} />
               <Route path="/chatp" element={<ChatP />} />
               <Route path="/faqp" element={<FaqP />} />
+              <Route path="/colors" element={<Colors />} />
+              <Route path="/alerts" element={<Alerts />} />
+              <Route path="/badges" element={<Badges />} />
+              <Route path="/datepicker" element={<DatePicker />} />
+              <Route path="/loadingindicators" element={<LOadingIndicators />} />
+              <Route path="/modal" element={<Modal />} />
+              <Route path="/statecolor" element={<StateColor />} />
+              <Route path="/typography" element={<Typography />} />
+              <Route path="/dropdowns" element={<Dropdowns />} />
+              <Route path="/buttons" element={<Buttons />} />
+
             </Routes>
           </div>
           <Footer/>
