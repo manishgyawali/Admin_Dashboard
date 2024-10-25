@@ -2,7 +2,10 @@ import React from 'react'
 
 const StateColor = () => {
   return (
-    <div>StateColor</div>
+    <div>StateColor
+
+      
+    </div>
   )
 }
 
