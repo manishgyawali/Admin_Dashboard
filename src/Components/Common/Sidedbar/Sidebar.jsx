@@ -25,17 +25,18 @@ const Sidebar = () => {
   const [isAppsOpen, setIsAppsOpen] = useState(false);
   const [isUiKitsOpen, setIsUiKitsOpen] = useState(false);
   const [isFormsOpen, setIsFormsOpen] = useState(false);
+  const [isProductsOpen, setIsProductsOpen] = useState(false);
 
   return (
     <div className="">
-      <aside className="flex flex-col gap-10 py-10 px-10">
+      <aside className="flex  flex-col gap-10 py-10 px-10 ">
         <div>
           <h1 className="font-semibold text-2xl">Salessa</h1>
         </div>
 
         <div className="flex flex-col gap-12 text-lg cursor-pointer">
           {/* Dashboard Dropdown */}
-          <div className="flex flex-col gap-5">
+          <div className="flex flex-col gap-5 ">
             <div
               className="flex justify-between items-center cursor-pointer"
               onClick={() => setIsDashboardOpen(!isDashboardOpen)}
@@ -138,15 +139,31 @@ const Sidebar = () => {
           </div>
           <div className="flex gap-5 items-center">
             <FaFileInvoiceDollar className="text-[#64C5B1] text-xl" />
-            <h1> Invoice</h1>
-          </div>
+            <Link to="/invoicep">Invoice</Link>
+            </div>
           <div className="flex gap-5 items-center">
             <FaCalendarAlt className="text-[#64C5B1] text-xl" />
             <h1> Calander</h1>
           </div>
-          <div className="flex gap-5 items-center">
-            <FaBoxOpen className="text-[#64C5B1] text-xl" />
-            <h1> Products</h1>
+          <div className="flex flex-col gap-5">
+            <div
+              className="flex justify-between items-center cursor-pointer"
+              onClick={() => setIsProductsOpen(!isProductsOpen)}
+            >
+              <div className="flex gap-5 items-center">
+                <FaBoxOpen className="text-[#64C5B1] text-xl" />
+                <h1> Products</h1>
+              </div>
+              {isProductsOpen ? <FaChevronUp /> : <FaChevronDown />}
+            </div>
+            {isProductsOpen && (
+              <div className="ml-8 flex flex-col gap-3">
+                <Link to="/productsp">Products</Link>
+                <Link to="/productsdetailsp">Product Details</Link>
+                <Link to="/cartp">Cart</Link>
+                <Link to="/checkoutp">Checkout</Link>
+              </div>
+            )}
           </div>
           <div className="flex gap-5 items-center">
             <FaIcons className="text-[#64C5B1] text-xl" />

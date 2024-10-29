@@ -20,6 +20,11 @@ import Badges from './Components/Pages/Ui kits/Badges';
 import Alerts from './Components/Pages/Ui kits/Alerts';
 import Dropdowns from './Components/Pages/Ui kits/Dropdowns';
 import Buttons from './Components/Pages/Ui kits/Buttons';
+import InvoiceP from './Components/Pages/InvoiceP';
+import ProductsP from "./Components/Pages/Products/ProductsP";
+import ProductsDetailsP from './Components/Pages/Products/ProductsDetailsP';
+import CartP from './Components/Pages/Products/CartP';
+import CheckoutP from './Components/Pages/Products/CheckoutP';
 
 function App() {
   return (
@@ -51,6 +56,12 @@ function App() {
               <Route path="/typography" element={<Typography />} />
               <Route path="/dropdowns" element={<Dropdowns />} />
               <Route path="/buttons" element={<Buttons />} />
+              <Route path="/invoicep" element={<InvoiceP />} />
+              <Route path="/productsp" element={<ProductsP />} />
+              <Route path="/productsdetailsp" element={<ProductsDetailsP />} />
+              <Route path="/cartp" element={<CartP />} />
+              <Route path="/checkoutp" element={<CheckoutP />} />
+
 
             </Routes>
           </div>
