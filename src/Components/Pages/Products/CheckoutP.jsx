@@ -70,6 +70,26 @@ const CheckoutP = () => {
               </tr>
             </tbody>
           </table>
+          <div className="flex font-semibold py-7 items-center justify-between">
+            <h1 className="px-6">Total :</h1>
+            <h1 className="font-semibold">$496</h1>
+          </div>
+          <div className="flex border py-5 px-3  rounded-md gap-5 justify-end">
+            <div className="flex flex-col gap-10 text-sm text-gray-800">
+              <h1>Subtotal</h1>
+              <h1>Shipping</h1>
+              <h1>Promo Code</h1>
+              <h1>Total</h1>
+            </div>
+            <div className="flex flex-col gap-10  text-sm text-gray-800">
+              <h1>$496.00</h1>
+
+              <h1>Shipping Charge : $5.00</h1>
+
+              <h1>-$10.00</h1>
+              <h1 className="text-black font-semibold"> $491.00</h1>
+            </div>
+          </div>
         </div>
 
         <div className="bg-white shadow-lg rounded-md w-80 p-5">
@@ -180,19 +200,26 @@ const CheckoutP = () => {
               <h1>Card No :</h1>
               <input type="text" placeholder="1234-5678-9123-4567" className="border-gray-400 border p-3 rounded-md" />
               <div className="grid grid-cols-3 gap-4">
-                <div>
+                <div className="flex flex-col gap-2">
                   <h1>Expiry Month</h1>
-                  <input type="month" />
+                  <input type="month" className="w-9/12 p-1 border border-gray-400 rounded" />
                 </div>
-                <div>
-                  <h1>Expiry Month</h1>
-                  <input type="year" />
+                <div className="flex flex-col gap-2">
+                  <h1>Expiry Year</h1>
+                  <input type="number" className="w-9/12 p-1 border border-gray-400 rounded" />
                 </div>
-                <div>
-                  <h1>Expiry Month</h1>
-                  <input type="month" />
+                <div className="flex flex-col gap-2">
+                  <h1>Security Code</h1>
+                  <input type="text" placeholder="Enter code" className="w-11/12 border border-gray-400 rounded p-1"/>
                 </div>
               </div>
+              <div className="flex  gap-5 items-center justify-evenly cursor-pointer border p-5">
+              <h1>Paypal</h1>
+              <img src={Paypal} alt="" className="h-10" />
+            </div>
+            <div>
+              <button className="bg-[#567AED] px-10 py-3 text-sm rounded-md text-white hover:shadow-2xl transit">PLACE YOUR ORDER</button>
+            </div>
             </div>
           </div>
         </div>

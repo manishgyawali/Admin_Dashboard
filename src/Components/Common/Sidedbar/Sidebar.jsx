@@ -26,6 +26,8 @@ const Sidebar = () => {
   const [isUiKitsOpen, setIsUiKitsOpen] = useState(false);
   const [isFormsOpen, setIsFormsOpen] = useState(false);
   const [isProductsOpen, setIsProductsOpen] = useState(false);
+  const [isChartsopen, setIsChartsOpen] = useState(false);
+
 
   return (
     <div className="">
@@ -177,9 +179,27 @@ const Sidebar = () => {
             <FaCog className="text-[#64C5B1] text-xl" />
             <h1> Components</h1>
           </div>
-          <div className="flex gap-5 items-center">
-            <FaTable className="text-[#64C5B1] text-xl" />
-            <h1> Table</h1>
+          <div className="flex flex-col gap-5">
+            <div
+              className="flex justify-between items-center cursor-pointer"
+              onClick={() => setIsChartsOpen(!isChartsopen)}
+            >
+              <div className="flex gap-5 items-center">
+                <FaBoxOpen className="text-[#64C5B1] text-xl" />
+                <h1> Charts</h1>
+              </div>
+              {isChartsopen ? <FaChevronUp /> : <FaChevronDown />}
+            </div>
+            {isChartsopen && (
+              <div className="ml-8 flex flex-col gap-3">
+                <Link to="/chartjs">ChartJs</Link>
+                <Link to="/apexcharts">Apex Charts</Link>
+                <Link to="/chartsparkline">Chart sparkline</Link>
+                <Link to="/amcharts">am-charts</Link>
+                <Link to="/nvd3charts">nvd3 charts</Link>
+
+              </div>
+            )}
           </div>
           <div className="flex gap-5 items-center">
             <FaThList className="text-[#64C5B1] text-xl" />

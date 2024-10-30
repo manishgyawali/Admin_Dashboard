@@ -25,6 +25,7 @@ import ProductsP from "./Components/Pages/Products/ProductsP";
 import ProductsDetailsP from './Components/Pages/Products/ProductsDetailsP';
 import CartP from './Components/Pages/Products/CartP';
 import CheckoutP from './Components/Pages/Products/CheckoutP';
+import ChartJs from "./Components/Pages/Charts/ChartJs";
 
 function App() {
   return (
@@ -61,7 +62,9 @@ function App() {
               <Route path="/productsdetailsp" element={<ProductsDetailsP />} />
               <Route path="/cartp" element={<CartP />} />
               <Route path="/checkoutp" element={<CheckoutP />} />
+              <Route path="/chartjs" element={<ChartJs />} />
 
+              
 
             </Routes>
           </div>
