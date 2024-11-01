@@ -10,6 +10,8 @@ const ChartJs = () => {
       <div className="bg-white p-5 rounded-md">
         <h1>Area Chart</h1>
         <div>
+
+
             
         </div>
       </div>
