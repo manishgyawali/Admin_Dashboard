@@ -1,5 +1,4 @@
 import React from "react";
-
 const ChartJs = () => {
   return (
     <div className="px-10 bg-[#F3F4F3]">
@@ -10,8 +9,6 @@ const ChartJs = () => {
       <div className="bg-white p-5 rounded-md">
         <h1>Area Chart</h1>
         <div>
-
-
             
         </div>
       </div>
