@@ -22,6 +22,8 @@ const Buttons = () => {
             <button className='text-white  bg-black px-3 py-1 rounded '>Dark</button>
             <button className='text-blue-400   px-3 py-1 rounded '>Link</button>
 
+
+
           </div>
           </div>
           <div className="pt-5 pb-14 px-10 bg-white flex  flex-col gap-5 rounded m-10 ">
