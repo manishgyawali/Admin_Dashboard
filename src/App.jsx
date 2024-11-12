@@ -6,39 +6,44 @@ import DefaultP from "./Components/Pages/DefaultP";
 import DarkMenuP from "./Components/Pages/DarkMenuP";
 import Sidebar from "./Components/Common/Sidedbar/Sidebar";
 import Footer from "./Components/Common/Footer/Footer";
-import EditorP from './Components/Pages/EditorP';
-import MailBoxP from './Components/Pages/MailBoxP';
+import EditorP from "./Components/Pages/EditorP";
+import MailBoxP from "./Components/Pages/MailBoxP";
 import ChatP from "./Components/Pages/ChatP";
-import FaqP from './Components/Pages/FaqP';
-import Colors from './Components/Pages/Ui kits/Colors';
-import Typography from './Components/Pages/Ui kits/Typography';
-import StateColor from './Components/Pages/Ui kits/StateColor';
-import Modal from './Components/Pages/Ui kits/Modal';
-import LOadingIndicators from './Components/Pages/Ui kits/LOadingIndicators';
-import DatePicker from './Components/Pages/Ui kits/DatePicker';
-import Badges from './Components/Pages/Ui kits/Badges';
-import Alerts from './Components/Pages/Ui kits/Alerts';
-import Dropdowns from './Components/Pages/Ui kits/Dropdowns';
-import Buttons from './Components/Pages/Ui kits/Buttons';
-import InvoiceP from './Components/Pages/InvoiceP';
+import FaqP from "./Components/Pages/FaqP";
+import Colors from "./Components/Pages/Ui kits/Colors";
+import Typography from "./Components/Pages/Ui kits/Typography";
+import StateColor from "./Components/Pages/Ui kits/StateColor";
+import Modal from "./Components/Pages/Ui kits/Modal";
+import LOadingIndicators from "./Components/Pages/Ui kits/LOadingIndicators";
+import DatePicker from "./Components/Pages/Ui kits/DatePicker";
+import Badges from "./Components/Pages/Ui kits/Badges";
+import Alerts from "./Components/Pages/Ui kits/Alerts";
+import Dropdowns from "./Components/Pages/Ui kits/Dropdowns";
+import Buttons from "./Components/Pages/Ui kits/Buttons";
+import InvoiceP from "./Components/Pages/InvoiceP";
 import ProductsP from "./Components/Pages/Products/ProductsP";
-import ProductsDetailsP from './Components/Pages/Products/ProductsDetailsP';
-import CartP from './Components/Pages/Products/CartP';
-import CheckoutP from './Components/Pages/Products/CheckoutP';
+import ProductsDetailsP from "./Components/Pages/Products/ProductsDetailsP";
+import CartP from "./Components/Pages/Products/CartP";
+import CheckoutP from "./Components/Pages/Products/CheckoutP";
 import ChartJs from "./Components/Pages/Charts/ChartJs";
-
+import ApexCharts from 'apexcharts'
 function App() {
+
+  
   return (
-    <Router>
-      <div className="flex h-screen">
-        <aside className="w-1/5 h-screen overflow-y-auto sticky top-0">
+   <div>
+    <div id="chart">
+    </div>
+     <Router>
+      <div className="grid grid-cols-11 h-screen overflow-clip ">
+        <aside className="col-span-2 h-[590px] scroll  overflow-scroll">
           <Sidebar />
         </aside>
 
-        <div className="flex-grow">
+        <div className="col-span-9 h-full  ">
           <TopNav />
 
-          <div className="">
+          <div className="h-[500px]  scroll overflow-scroll pb-24">
             <Routes>
               <Route path="/" element={<SalesP />} />
               <Route path="/defaultp" element={<DefaultP />} />
@@ -51,7 +56,10 @@ function App() {
               <Route path="/alerts" element={<Alerts />} />
               <Route path="/badges" element={<Badges />} />
               <Route path="/datepicker" element={<DatePicker />} />
-              <Route path="/loadingindicators" element={<LOadingIndicators />} />
+              <Route
+                path="/loadingindicators"
+                element={<LOadingIndicators />}
+              />
               <Route path="/modal" element={<Modal />} />
               <Route path="/statecolor" element={<StateColor />} />
               <Route path="/typography" element={<Typography />} />
@@ -63,15 +71,13 @@ function App() {
               <Route path="/cartp" element={<CartP />} />
               <Route path="/checkoutp" element={<CheckoutP />} />
               <Route path="/chartjs" element={<ChartJs />} />
-
-              
-
             </Routes>
-          </div>
-          <Footer/>
+            <Footer />
+            </div>
         </div>
       </div>
     </Router>
+   </div>
   );
 }
 
