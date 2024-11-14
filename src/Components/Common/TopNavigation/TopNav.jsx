@@ -3,15 +3,15 @@ import { FaSearch, FaBell, FaEnvelope } from "react-icons/fa";
 
 const TopNav = () => {
   return (
-    <nav className=" shadow-sm py-6 px-6 flex items-center justify-between">
+    <nav className=" shadow-lg py-6 px-6 flex items-center justify-between">
   
       <div className="flex items-center gap-4">
         <div className="relative">
-          <FaSearch className="absolute left-3 top-3 text-gray-400" />
+          <FaSearch className="absolute left-3 top-3 text-sm text-gray-400" />
           <input
             type="text"
             placeholder="Search here..."
-            className="pl-10 pr-4 py-2 w-80 border border-gray-300 rounded-full  focus:outline-none focus:border-[#64C5B1]"
+            className="pl-10 pr-4 py-2 w-80 border border-gray-300 rounded-full text-sm  focus:outline-none focus:border-[#64C5B1]"
           />
         </div>
       </div>
