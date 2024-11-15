@@ -30,6 +30,7 @@ export const data = [
 ];
 
 export const options = {
+  title: "Indian Language Use",
   legend: "none",
   pieSliceText: "label",
   slices: {
@@ -40,9 +41,8 @@ export const options = {
   },
 };
 
-
 const SalesP = () => {
-   const Datas = [
+  const Datas = [
     [
       { type: "number", label: "x" },
       { type: "number", label: "values" },
@@ -62,8 +62,8 @@ const SalesP = () => {
     [7, 80, 77, 83, 70, 77, 85, 90],
     [8, 100, 90, 110, 85, 95, 102, 110],
   ];
-  
-   const options = {
+
+  const options = {
     title: "Bar/area interval chart",
     curveType: "function",
     intervals: { color: "series-color" },
@@ -88,21 +88,26 @@ const SalesP = () => {
     },
     legend: "none",
   };
-  
+
   const data = [
-    ["Jan", "Revenue", { role: "style" }],
-    ["Feb", 30, "#64C5B1"],
-    ["Mar", 39, "#64C5B1"],
-    ["Apr", 19, "#64C5B1"],
-    ["May", 30, "color: #64C5B1"],
-    ["Jun", 40, "color: #64C5B1"],
-    ["Jul", 27, "color: #64C5B1"],
-    ["Aug", 18, "color: #64C5B1"],
-    ["Sep", 35, "color: #64C5B1"],
-    ["Oct", 40, "color: #64C5B1"],
-    ["Nov", 20, "color: #64C5B1"],
-    ["Dec", 39, "color: #64C5B1"],
+    ["Year", "Sales", "Expenses"],
+    ["2014", 1000, 400],
+    ["2015", 1170, 460],
+    ["2016", 660, 1120],
+    ["2017", 1030, 540],
   ];
+
+ 
+  const option = {
+    chart: {
+      
+      subtitle: "Sales and Expenses over the Years",
+    },
+    bars: "vertical",
+    colors: ["#1b9e77", "#d95f02", "#7570b3"],
+    bar: { groupWidth: "75%" },
+    legend: { position: "bottom" },
+  };
 
   return (
     <div className=" flex flex-col gap-10  bg-[#F3F4F3] ">
@@ -133,13 +138,8 @@ const SalesP = () => {
               <button className="text-sm text-blue-500">Last Month</button>
             </div>
           </div>
-          <div className=" bg-gray-100 rounded-md flex items-center justify-center">
-            <Chart
-              chartType="ColumnChart"
-              width="100%"
-              height="380px"
-              data={data}
-            />
+          <div className="  rounded-md flex items-center justify-center">
+            <Chart chartType="Bar" data={data} options={option} className="w-100% h-[400px] "/>
           </div>
         </div>
 
@@ -147,13 +147,13 @@ const SalesP = () => {
         <div className="w-4/12 h-[460px] p-4 bg-white rounded-lg shadow-md flex flex-col gap-10">
           <h2 className="text-sm font-semibold ">Total Sales Unit</h2>
           <div className="h-2/3 bg-gray-100 rounded-md flex items-center justify-center">
-            <Chart
-              chartType="PieChart"
-              data={data}
-              options={options}
-              width={"100%"}
-              height={"300px"}
-            />
+          <Chart
+      chartType="PieChart"
+      data={data}
+      options={options}
+      width={"100%"}
+      height={"400px"}
+    />
           </div>
         </div>
       </div>
@@ -210,13 +210,13 @@ const SalesP = () => {
           <div>
             <h1>Daily Sales</h1>
             <div>
-            <Chart
-      chartType="LineChart"
-      width="100%"
-      height="400px"
-      data={Datas}
-      options={options}
-    />
+              <Chart
+                chartType="LineChart"
+                width="100%"
+                height="400px"
+                data={Datas}
+                options={options}
+              />
             </div>
           </div>
 

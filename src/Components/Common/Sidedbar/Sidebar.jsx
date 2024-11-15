@@ -62,10 +62,10 @@ const Sidebar = () => {
       title: "Forms",
       icon: <FaWpforms className="text-[#64C5B1] " />,
       subdata: [
-        { title: "Basic Elements" },
-        { title: "Groups" },
-        { title: "Max Length" },
-        { title: "Layouts" },
+        { title: "Basic Elements",path: "/basicelementsp" },
+        { title: "Groups",path: "/groupsp" },
+        { title: "Max Length",path: "/maxLengthp" },
+        { title: "Layouts",path: "/layoutp" },
       ],
     },
     {

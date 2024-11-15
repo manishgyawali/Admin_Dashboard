@@ -27,6 +27,10 @@ import CartP from "./Components/Pages/Products/CartP";
 import CheckoutP from "./Components/Pages/Products/CheckoutP";
 import ChartJs from "./Components/Pages/Charts/ChartJs";
 import ApexCharts from 'apexcharts'
+import BasicElementsP from './Components/Pages/Forms/BasicElementsP';
+import GroupsP from './Components/Pages/Forms/GroupsP';
+import LayoutP from './Components/Pages/Forms/LayoutP';
+import MaxLengthP from './Components/Pages/Forms/MaxLengthP';
 function App() {
 
   
@@ -71,6 +75,10 @@ function App() {
               <Route path="/cartp" element={<CartP />} />
               <Route path="/checkoutp" element={<CheckoutP />} />
               <Route path="/chartjs" element={<ChartJs />} />
+              <Route path="/basicelementsp" element={<BasicElementsP />} />
+              <Route path="/groupsp" element={<GroupsP />} />
+              <Route path="/layoutp" element={<LayoutP />} />
+              <Route path="/maxLengthp" element={<MaxLengthP />} />
             </Routes>
             <Footer />
             </div>
