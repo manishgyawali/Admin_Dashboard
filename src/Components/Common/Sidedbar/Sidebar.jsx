@@ -166,7 +166,7 @@ const Sidebar = () => {
         <div>
           <h1 className="font-semibold text-2xl">Salessa</h1>
         </div>
-        <div className="grid gap-10 text-lg">
+        <div className="grid gap-6 text-lg">
           {sidebarData.map((val, i) => (
             <div key={i}>
               {val.subdata ? (
@@ -185,22 +185,24 @@ const Sidebar = () => {
                   )}
                 </div>
               ) : (
-                <Link to={val.path} className="flex gap-4 justify-between items-center">
+                <Link to={val.path} className="flex gap-10 justify-between items-center">
                   <div className="flex items-center gap-4">
                     {val.icon}
                     <h1>{val.title}</h1>
                   </div>
                 </Link>
               )}
-              {Show === i && val.subdata && (
-                <div className="pt-4  grid gap-4 opacity-100 text-gray-500 transition-all ease-in-out duration-150 delay-75 w-8/12 mx-auto">
-                  {val.subdata.map((item, ind) => (
+              {
+                <div className={` flex flex-col gap-2 opacity-100 text-gray-500 
+                  ${Show === i && val.subdata?"opacity-100 min-h h-32":"opacity-0 h-0"}
+                transition-all ease-in-out duration-700 delay-75 w-8/12 mx-auto`}>
+                  {val?.subdata?.map((item, ind) => (
                     <Link key={ind} to={item.path}>
                       <div>{item.title}</div>
                     </Link>
                   ))}
                 </div>
-              )}
+              }
             </div>
           ))}
         </div>

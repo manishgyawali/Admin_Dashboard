@@ -1,5 +1,7 @@
 import React from "react";
-import { FaSearch, FaBell, FaEnvelope } from "react-icons/fa";
+import { CiBellOn } from "react-icons/ci";
+import { FaSearch } from "react-icons/fa";
+import { HiOutlineEnvelope } from "react-icons/hi2";
 
 const TopNav = () => {
   return (
@@ -18,8 +20,8 @@ const TopNav = () => {
 
 
       <div className="flex items-center gap-6">
-        <FaEnvelope className="text-gray-500 text-lg cursor-pointer" />
-        <FaBell className="text-gray-500 text-lg cursor-pointer" />
+        <CiBellOn  className="text-gray-500 text-2xl cursor-pointer" />
+        <HiOutlineEnvelope  className="text-gray-500 text-xl cursor-pointer" />
         
 
         <div className="w-8 h-8 rounded-full overflow-hidden">

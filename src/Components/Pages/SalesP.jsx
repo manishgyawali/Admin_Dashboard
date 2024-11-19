@@ -1,5 +1,5 @@
 import React from "react";
-import { PiGreaterThan } from "react-icons/pi";
+import { PiDotsThreeBold, PiGreaterThan } from "react-icons/pi";
 import { FaArrowUp } from "react-icons/fa";
 import { Chart } from "react-google-charts";
 
@@ -205,26 +205,42 @@ const SalesP = () => {
         </div>
       </div>
 
-      <div className="ml-5">
-        <div className="w-8/12 ">
-          <div>
-            <h1>Daily Sales</h1>
-            <div>
-              <Chart
-                chartType="LineChart"
-                width="100%"
-                height="400px"
-                data={Datas}
-                options={options}
-              />
-            </div>
+      
+        <div className="grid grid-cols-3 gap-3">
+      
+        <div className="bg-white border flex flex-col gap-5 border-gray-200 rounded-md  p-5 mx-10">
+          <div className="flex items-center  justify-between">
+            <h1 className="text-sm font-semibold">Daily sales</h1>
+            <PiDotsThreeBold className="text-xl" />
           </div>
-
           <div>
-            <h1> Summary</h1>
+            <Chart
+              chartType="LineChart"
+              width="240px"
+              height="180px"
+              data={Datas}
+              options={options}
+            />
           </div>
         </div>
-      </div>
+
+        <div className="bg-white border flex flex-col gap-5 border-gray-200 rounded-md  p-5 mx-10">
+          <div className="flex items-center  justify-between">
+            <h1 className="text-sm font-semibold">Summary</h1>
+            <PiDotsThreeBold className="text-xl" />
+          </div>
+          <div>
+            <Chart
+              chartType="LineChart"
+              width="240px"
+              height="180px"
+              data={Datas}
+              options={options}
+            />
+          </div>
+        </div>
+        </div>
+    
     </div>
   );
 };

@@ -25,7 +25,7 @@ const MaxLengthP = () => {
   ];
   return (
     <div className="bg-[#EDF1F3] py-5 ">
-      <div className="p-10 grid grid-cols-2 gap-5 py-5 px-10 rounded mx-10 mt-5">
+      <div className="p-10 py-5 px-10 rounded mx-10 mt-5">
         {/* <div className="flex flex-col gap-5 bg-white">
           <h1>Default Usage</h1>
           <div className="flex flex-col gap-2">
@@ -40,7 +40,7 @@ const MaxLengthP = () => {
             />
           </div>
         </div> */}
-        <div className="grid grid-cols-2 gap-5">
+        <div className="grid bg-white grid-cols-2 gap-5 ">
           {maxData.map((val, i) => (
             <div key={i} className="flex flex-col gap-5">
               <h1>{val.title}</h1>
