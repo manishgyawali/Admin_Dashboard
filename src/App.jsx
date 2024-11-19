@@ -31,6 +31,7 @@ import BasicElementsP from './Components/Pages/Forms/BasicElementsP';
 import GroupsP from './Components/Pages/Forms/GroupsP';
 import LayoutP from './Components/Pages/Forms/LayoutP';
 import MaxLengthP from './Components/Pages/Forms/MaxLengthP';
+import BorderP from './Components/Pages/Border/BorderP';
 function App() {
 
   
@@ -79,6 +80,8 @@ function App() {
               <Route path="/groupsp" element={<GroupsP />} />
               <Route path="/layoutp" element={<LayoutP />} />
               <Route path="/maxLengthp" element={<MaxLengthP />} />
+              <Route path="/borderp" element={<BorderP />} />
+
             </Routes>
             <Footer />
             </div>

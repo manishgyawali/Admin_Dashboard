@@ -71,6 +71,8 @@ const Sidebar = () => {
     {
       title: "Board",
       icon: <FaTrello className="text-[#64C5B1] " />,
+      path: "/borderp",
+
     },
     {
       title: "Invoice",
