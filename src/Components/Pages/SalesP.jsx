@@ -28,6 +28,21 @@ export const data = [
   ["Telugu", 74],
   ["Urdu", 52],
 ];
+const invoices = [
+  { customer: 'Customer', product: 'Sunglass', invoice: '#DE2548', price: '$350', status: 'Pending' },
+  { customer: 'Customer', product: 'Sunglass', invoice: '#DE2548', price: '$350', status: 'Paid' },
+  { customer: 'Customer', product: 'Sunglass', invoice: '#DE2548', price: '$350', status: 'Shipped' },
+  { customer: 'Customer', product: 'Sunglass', invoice: '#DE2548', price: '$350', status: 'Delivered' },
+];
+
+const statusColors = {
+  Pending: 'text-orange-500 bg-orange-100',
+  Paid: 'text-purple-500 bg-purple-100',
+  Shipped: 'text-blue-500 bg-blue-100',
+  Delivered: 'text-green-500 bg-green-100',
+};
+
+
 
 export const options = {
   title: "Indian Language Use",
@@ -97,10 +112,8 @@ const SalesP = () => {
     ["2017", 1030, 540],
   ];
 
- 
   const option = {
     chart: {
-      
       subtitle: "Sales and Expenses over the Years",
     },
     bars: "vertical",
@@ -109,8 +122,44 @@ const SalesP = () => {
     legend: { position: "bottom" },
   };
 
+  const transactions = [
+    { name: "Electricity Bill", amount: -1254, time: "10 Aug 03:00PM" },
+    { name: "Showroom Rent", amount: 1254, time: "10 Aug 03:00PM" },
+    { name: "Iron Costing", amount: 1254, time: "10 Aug 03:00PM" },
+    { name: "Packaging Cost", amount: 1254, time: "10 Aug 03:00PM" },
+  ];
+
+  const updates = [
+    {
+      title: "36% off For pixel lights Couslations Types.",
+      description: "Sorem Kpsum is simply of the printing..",
+    },
+    {
+      title: "We are produce new product this",
+      description: "Gorem Rpsum is simply text of the printing...",
+    },
+    {
+      title: "50% off For COVID Couslations Types.",
+      description: "EoremHpsum is simply dummy...",
+    },
+  ];
+  const products = [
+    { name: 'Product 1', price: '$564', discount: '#DE2548', sold: '60', source: 'Google' },
+    { name: 'Product 1', price: '$564', discount: '#DE2548', sold: '60', source: 'Direct' },
+    { name: 'Product 1', price: '$564', discount: '#DE2548', sold: '60', source: 'Email' },
+    { name: 'Product 1', price: '$564', discount: '#DE2548', sold: '60', source: 'Referral' },
+  ];
+
+  const sourceColors = {
+    Google: 'text-red-500',
+    Direct: 'text-green-500',
+    Email: 'text-blue-500',
+    Referral: 'text-purple-500',
+  };
+
+
   return (
-    <div className=" flex flex-col gap-10  bg-[#F3F4F3] ">
+    <div className=" flex flex-col gap-5  bg-[#F3F4F3] ">
       <div className="bg-[#64C5B1] py-5  ">
         <div className="flex justify-between items-start  w-11/12 mx-auto ">
           <div className="flex flex-col gap-3 ">
@@ -139,7 +188,12 @@ const SalesP = () => {
             </div>
           </div>
           <div className="  rounded-md flex items-center justify-center">
-            <Chart chartType="Bar" data={data} options={option} className="w-100% h-[400px] "/>
+            <Chart
+              chartType="Bar"
+              data={data}
+              options={option}
+              className="w-100% h-[400px] "
+            />
           </div>
         </div>
 
@@ -147,13 +201,13 @@ const SalesP = () => {
         <div className="w-4/12 h-[460px] p-4 bg-white rounded-lg shadow-md flex flex-col gap-10">
           <h2 className="text-sm font-semibold ">Total Sales Unit</h2>
           <div className="h-2/3 bg-gray-100 rounded-md flex items-center justify-center">
-          <Chart
-      chartType="PieChart"
-      data={data}
-      options={options}
-      width={"100%"}
-      height={"400px"}
-    />
+            <Chart
+              chartType="PieChart"
+              data={data}
+              options={options}
+              width={"100%"}
+              height={"400px"}
+            />
           </div>
         </div>
       </div>
@@ -173,7 +227,7 @@ const SalesP = () => {
             </button>
           </div>
         </div>
-        <div className="w-4/12 flex gap-2 px-7 py-5 rounded-md shadow-md  bg-[#323246] mr-4">
+        <div className="w-4/12 flex gap-2 px-7 py-5 rounded shadow-md  bg-[#323246] mr-4">
           <div>
             <h1 className="text-[#B9E6D5] text-sm">This Month Revenue</h1>
             <h1 className="text-white text-2xl">$57k</h1>
@@ -205,10 +259,8 @@ const SalesP = () => {
         </div>
       </div>
 
-      
-        <div className="grid grid-cols-3 gap-3">
-      
-        <div className="bg-white border flex flex-col gap-5 border-gray-200 rounded-md  p-5 mx-10">
+      <div className="grid grid-cols-3 gap-3">
+        <div className="bg-white border flex flex-col gap-5 border-gray-200 rounded-md  px-8 py-5 mx-10">
           <div className="flex items-center  justify-between">
             <h1 className="text-sm font-semibold">Daily sales</h1>
             <PiDotsThreeBold className="text-xl" />
@@ -216,7 +268,7 @@ const SalesP = () => {
           <div>
             <Chart
               chartType="LineChart"
-              width="240px"
+              width="225px"
               height="180px"
               data={Datas}
               options={options}
@@ -224,7 +276,7 @@ const SalesP = () => {
           </div>
         </div>
 
-        <div className="bg-white border flex flex-col gap-5 border-gray-200 rounded-md  p-5 mx-10">
+        <div className="bg-white border flex flex-col gap-5 border-gray-200 rounded-md  px-8 py-5 mx-10">
           <div className="flex items-center  justify-between">
             <h1 className="text-sm font-semibold">Summary</h1>
             <PiDotsThreeBold className="text-xl" />
@@ -232,15 +284,159 @@ const SalesP = () => {
           <div>
             <Chart
               chartType="LineChart"
-              width="240px"
+              width="225px"
               height="180px"
               data={Datas}
               options={options}
             />
           </div>
         </div>
+      </div>
+
+      <div className="grid grid-cols-3 gap-3 mx-6">
+        <div className="bg-white shadow rounded-lg p-6">
+          <h2 className="text-sm font-semibold mb-4">Transaction</h2>
+          {transactions.map((transaction, index) => (
+            <div
+              key={index}
+              className="flex justify-between items-center py-2 border-b last:border-b-0"
+            >
+              <div className="flex items-center gap-3">
+                <div className="w-10 h-10 bg-blue-100 rounded-full flex justify-center items-center text-blue-500">
+                  💸
+                </div>
+                <div>
+                  <p className="font-medium">{transaction.name}</p>
+                  <p className="text-sm text-gray-500">{transaction.time}</p>
+                </div>
+              </div>
+              <p
+                className={`font-semibold ${
+                  transaction.amount < 0 ? "text-red-500" : "text-green-500"
+                }`}
+              >
+                {transaction.amount < 0 ? "-" : "+"} $
+                {Math.abs(transaction.amount)}
+              </p>
+            </div>
+          ))}
         </div>
-    
+
+        <div className="bg-white shadow rounded-lg p-6">
+          <div className="flex justify-between items-center mb-4">
+            <h2 className="text-sm font-semibold">News & Update</h2>
+            <button className="text-sm text-green-500 bg-green-100 py-1 px-3 rounded-full">
+              Today
+            </button>
+          </div>
+          {updates.map((update, index) => (
+            <div key={index} className="mb-8 last:mb-0">
+              <h3 className="font-medium text-gray-800">{update.title}</h3>
+              <p className="text-sm text-gray-500">{update.description}</p>
+            </div>
+          ))}
+          <button className="text-green-500 flex text- text-sm">Load more &darr;</button>
+        </div>
+
+        <div className="bg-white shadow rounded-lg p-6">
+          <h2 className=" font-semibold mb-4 text-sm">Account Info</h2>
+          <div className="mb-6">
+            <div className="flex justify-between mb-2">
+              <span className="font-semibold text-sm">Monthly Plan</span>
+              <span className="text-gray-600">$25</span>
+            </div>
+            <div className="flex justify-between  mb-2">
+              <span className="font-semibold text-sm">Taxes</span>
+              <span className="text-gray-600">$14</span>
+            </div>
+            <div className="flex justify-between text-gray-600">
+              <span className="font-semibold text-sm">Extera</span>
+              <span className="text-gray-600">$25</span>
+            </div>
+            <p className="text-sm font-semibold text-gray-500 mt-1">
+              Netflix and other bills in this month.
+            </p>
+          </div>
+          <div className="bg-gray-50 p-4 rounded-lg text-center">
+            <h1 className="font-semibold text-sm text-gray-600">Total balance</h1>
+            <h3 className="text-5xl font-semibold text-green-500">$3650</h3>
+            <p className="text-sm text-gray-500">+1235</p>
+            <div className="grid justify-center gap-2 mt-4">
+              <button className="bg-red-100 text-red-500 text-sm px-3 py-1 rounded">
+                Today
+              </button>
+              <button className="bg-blue-100 text-blue-500 text-sm px-3 py-1 rounded">
+                This week
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div className="grid grid-cols-2 gap-5 mx-6">
+      <div className="bg-white shadow rounded-lg p-6">
+      <h2 className="text-lg font-semibold mb-4">Monthly Invoices</h2>
+      <table className="w-full text-left">
+        <thead>
+          <tr className="text-gray-500 text-sm">
+            <th className="py-2">Customer</th>
+            <th>Product</th>
+            <th>Invoice</th>
+            <th>Price</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          {invoices.map((invoice, index) => (
+            <tr key={index} className="text-sm border-b last:border-none">
+              <td className="py-3 flex items-center gap-3">
+                <div className="w-8 h-8 rounded-full bg-gray-100"></div>
+                <span className="text-blue-500">{invoice.customer}</span>
+              </td>
+              <td className="text-orange-500">{invoice.product}</td>
+              <td className="text-green-500">{invoice.invoice}</td>
+              <td>{invoice.price}</td>
+              <td>
+                <span
+                  className={`text-xs py-1 px-3 rounded-full ${statusColors[invoice.status]}`}
+                >
+                  {invoice.status}
+                </span>
+              </td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+    <div className="bg-white shadow rounded-lg p-6">
+      <h2 className="text-lg font-semibold mb-4">Top Selling Product</h2>
+      <table className="w-full text-left">
+        <thead>
+          <tr className="text-gray-500 text-sm">
+            <th className="py-2">Product</th>
+            <th>Price</th>
+            <th>Discount</th>
+            <th>Sold</th>
+            <th>Source</th>
+          </tr>
+        </thead>
+        <tbody>
+          {products.map((product, index) => (
+            <tr key={index} className="text-sm border-b last:border-none">
+              <td className="py-3 flex items-center gap-3">
+                <div className="w-8 h-8 rounded-full bg-gray-100"></div>
+                <span>{product.name}</span>
+              </td>
+              <td>{product.price}</td>
+              <td className="text-green-500">{product.discount}</td>
+              <td>{product.sold}</td>
+              <td className={sourceColors[product.source]}>{product.source}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+      </div>
     </div>
   );
 };
