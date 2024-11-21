@@ -162,7 +162,8 @@ const Sidebar = () => {
             <div key={i}>
               {val.subdata ? (
                 <div
-                  onClick={() => setShow(Show === i ? null : i)}
+                  onClick={() => {
+                    setShow(Show === i ? null : i)}}
                   className="flex gap-4 justify-between items-center cursor-pointer"
                 >
                   <div className="flex items-center gap-4">
@@ -170,9 +171,9 @@ const Sidebar = () => {
                     <h1>{val.title}</h1>
                   </div>
                   {Show === i ? (
-                    <MdKeyboardArrowDown className="text-2xl text-gray-400" />
+                    <MdKeyboardArrowDown className="text-xl  text-gray-400" />
                   ) : (
-                    <MdKeyboardArrowRight className="text-2xl text-gray-400" />
+                    <MdKeyboardArrowRight className="text-xl text-gray-400" />
                   )}
                 </div>
               ) : (
@@ -188,15 +189,15 @@ const Sidebar = () => {
               )}
               {
                 <div
-                  className={` flex flex-col gap-2 opacity-100 text-gray-500 
+                  className={` flex flex-col gap-2   text-gray-500 
                   ${
-                    Show === i && val.subdata
-                      ? "opacity-100 min-h h-32"
-                      : "opacity-0 h-0"
+                    Show === i 
+                      ? "opacity-100  max-h-32 overflow-scroll  "
+                      : "opacity-0 h-0 "
                   }
                 transition-all ease-in-out duration-700 delay-75 w-8/12 mx-auto`}
                 >
-                  {val?.subdata?.map((item, ind) => (
+                  {val.subdata && val.subdata.map((item, ind) => (
                     <Link key={ind} to={item.path}>
                       <div>{item.title}</div>
                     </Link>

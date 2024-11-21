@@ -3,6 +3,11 @@ import { PiDotsThreeBold, PiGreaterThan } from "react-icons/pi";
 import { FaArrowUp } from "react-icons/fa";
 import { Chart } from "react-google-charts";
 
+import GoogleMapReact from "google-map-react";
+
+
+const AnyReactComponent = ({ text }) => <div>{text}</div>;
+
 export const data = [
   ["Language", "Speakers (in millions)"],
   ["Assamese", 13],
@@ -29,20 +34,42 @@ export const data = [
   ["Urdu", 52],
 ];
 const invoices = [
-  { customer: 'Customer', product: 'Sunglass', invoice: '#DE2548', price: '$350', status: 'Pending' },
-  { customer: 'Customer', product: 'Sunglass', invoice: '#DE2548', price: '$350', status: 'Paid' },
-  { customer: 'Customer', product: 'Sunglass', invoice: '#DE2548', price: '$350', status: 'Shipped' },
-  { customer: 'Customer', product: 'Sunglass', invoice: '#DE2548', price: '$350', status: 'Delivered' },
+  {
+    customer: "Customer",
+    product: "Sunglass",
+    invoice: "#DE2548",
+    price: "$350",
+    status: "Pending",
+  },
+  {
+    customer: "Customer",
+    product: "Sunglass",
+    invoice: "#DE2548",
+    price: "$350",
+    status: "Paid",
+  },
+  {
+    customer: "Customer",
+    product: "Sunglass",
+    invoice: "#DE2548",
+    price: "$350",
+    status: "Shipped",
+  },
+  {
+    customer: "Customer",
+    product: "Sunglass",
+    invoice: "#DE2548",
+    price: "$350",
+    status: "Delivered",
+  },
 ];
 
 const statusColors = {
-  Pending: 'text-orange-500 bg-orange-100',
-  Paid: 'text-purple-500 bg-purple-100',
-  Shipped: 'text-blue-500 bg-blue-100',
-  Delivered: 'text-green-500 bg-green-100',
+  Pending: "text-orange-500 bg-orange-100",
+  Paid: "text-purple-500 bg-purple-100",
+  Shipped: "text-blue-500 bg-blue-100",
+  Delivered: "text-green-500 bg-green-100",
 };
-
-
 
 export const options = {
   title: "Indian Language Use",
@@ -57,6 +84,13 @@ export const options = {
 };
 
 const SalesP = () => {
+  const defaultProps = {
+    center: {
+      lat: 10.99835602,
+      lng: 77.01502627,
+    },
+    zoom: 11,
+  };
   const Datas = [
     [
       { type: "number", label: "x" },
@@ -110,6 +144,9 @@ const SalesP = () => {
     ["2015", 1170, 460],
     ["2016", 660, 1120],
     ["2017", 1030, 540],
+    ["2018", 1170, 460],
+    ["2019", 660, 1120],
+    ["2020", 1030, 540],
   ];
 
   const option = {
@@ -144,24 +181,47 @@ const SalesP = () => {
     },
   ];
   const products = [
-    { name: 'Product 1', price: '$564', discount: '#DE2548', sold: '60', source: 'Google' },
-    { name: 'Product 1', price: '$564', discount: '#DE2548', sold: '60', source: 'Direct' },
-    { name: 'Product 1', price: '$564', discount: '#DE2548', sold: '60', source: 'Email' },
-    { name: 'Product 1', price: '$564', discount: '#DE2548', sold: '60', source: 'Referral' },
+    {
+      name: "Product 1",
+      price: "$564",
+      discount: "#DE2548",
+      sold: "60",
+      source: "Google",
+    },
+    {
+      name: "Product 1",
+      price: "$564",
+      discount: "#DE2548",
+      sold: "60",
+      source: "Direct",
+    },
+    {
+      name: "Product 1",
+      price: "$564",
+      discount: "#DE2548",
+      sold: "60",
+      source: "Email",
+    },
+    {
+      name: "Product 1",
+      price: "$564",
+      discount: "#DE2548",
+      sold: "60",
+      source: "Referral",
+    },
   ];
 
   const sourceColors = {
-    Google: 'text-red-500',
-    Direct: 'text-green-500',
-    Email: 'text-blue-500',
-    Referral: 'text-purple-500',
+    Google: "text-red-500",
+    Direct: "text-green-500",
+    Email: "text-blue-500",
+    Referral: "text-purple-500",
   };
-
 
   return (
     <div className=" flex flex-col gap-5  bg-[#F3F4F3] ">
       <div className="bg-[#64C5B1] py-5  ">
-        <div className="flex justify-between items-start  w-11/12 mx-auto ">
+        <div className="flex justify-between items-start group-[]:  w-11/12 mx-auto ">
           <div className="flex flex-col gap-3 ">
             <h1 className="text-2xl text-white font-semibold">Dashboard</h1>
             <h3 className="text-white text-sm flex items-center gap-2">
@@ -169,7 +229,7 @@ const SalesP = () => {
               <PiGreaterThan className="text-sm" /> Sales
             </h3>
           </div>
-          <button className="px-5 py-2 rounded shadow-2xl mt-5 text-black bg-white hover:bg-blue-500">
+          <button className="px-7 py-3 text-sm rounded shadow-2xl mt-5  text-black bg-white group-hover::bg-blue-500">
             Create Report
           </button>
         </div>
@@ -192,7 +252,7 @@ const SalesP = () => {
               chartType="Bar"
               data={data}
               options={option}
-              className="w-100% h-[400px] "
+              className="w-[500px] h-[400px] "
             />
           </div>
         </div>
@@ -335,7 +395,9 @@ const SalesP = () => {
               <p className="text-sm text-gray-500">{update.description}</p>
             </div>
           ))}
-          <button className="text-green-500 flex text- text-sm">Load more &darr;</button>
+          <button className="text-green-500 flex text- text-sm">
+            Load more &darr;
+          </button>
         </div>
 
         <div className="bg-white shadow rounded-lg p-6">
@@ -358,7 +420,9 @@ const SalesP = () => {
             </p>
           </div>
           <div className="bg-gray-50 p-4 rounded-lg text-center">
-            <h1 className="font-semibold text-sm text-gray-600">Total balance</h1>
+            <h1 className="font-semibold text-sm text-gray-600">
+              Total balance
+            </h1>
             <h3 className="text-5xl font-semibold text-green-500">$3650</h3>
             <p className="text-sm text-gray-500">+1235</p>
             <div className="grid justify-center gap-2 mt-4">
@@ -374,68 +438,88 @@ const SalesP = () => {
       </div>
 
       <div className="grid grid-cols-2 gap-5 mx-6">
-      <div className="bg-white shadow rounded-lg p-6">
-      <h2 className="text-lg font-semibold mb-4">Monthly Invoices</h2>
-      <table className="w-full text-left">
-        <thead>
-          <tr className="text-gray-500 text-sm">
-            <th className="py-2">Customer</th>
-            <th>Product</th>
-            <th>Invoice</th>
-            <th>Price</th>
-            <th>Status</th>
-          </tr>
-        </thead>
-        <tbody>
-          {invoices.map((invoice, index) => (
-            <tr key={index} className="text-sm border-b last:border-none">
-              <td className="py-3 flex items-center gap-3">
-                <div className="w-8 h-8 rounded-full bg-gray-100"></div>
-                <span className="text-blue-500">{invoice.customer}</span>
-              </td>
-              <td className="text-orange-500">{invoice.product}</td>
-              <td className="text-green-500">{invoice.invoice}</td>
-              <td>{invoice.price}</td>
-              <td>
-                <span
-                  className={`text-xs py-1 px-3 rounded-full ${statusColors[invoice.status]}`}
-                >
-                  {invoice.status}
-                </span>
-              </td>
-            </tr>
-          ))}
-        </tbody>
-      </table>
-    </div>
-    <div className="bg-white shadow rounded-lg p-6">
-      <h2 className="text-lg font-semibold mb-4">Top Selling Product</h2>
-      <table className="w-full text-left">
-        <thead>
-          <tr className="text-gray-500 text-sm">
-            <th className="py-2">Product</th>
-            <th>Price</th>
-            <th>Discount</th>
-            <th>Sold</th>
-            <th>Source</th>
-          </tr>
-        </thead>
-        <tbody>
-          {products.map((product, index) => (
-            <tr key={index} className="text-sm border-b last:border-none">
-              <td className="py-3 flex items-center gap-3">
-                <div className="w-8 h-8 rounded-full bg-gray-100"></div>
-                <span>{product.name}</span>
-              </td>
-              <td>{product.price}</td>
-              <td className="text-green-500">{product.discount}</td>
-              <td>{product.sold}</td>
-              <td className={sourceColors[product.source]}>{product.source}</td>
-            </tr>
-          ))}
-        </tbody>
-      </table>
-    </div>
+        <div className="bg-white shadow rounded-lg p-6">
+          <h2 className="text-lg font-semibold mb-4">Monthly Invoices</h2>
+          <table className="w-full text-left">
+            <thead>
+              <tr className="text-gray-500 text-sm">
+                <th className="py-2">Customer</th>
+                <th>Product</th>
+                <th>Invoice</th>
+                <th>Price</th>
+                <th>Status</th>
+              </tr>
+            </thead>
+            <tbody>
+              {invoices.map((invoice, index) => (
+                <tr key={index} className="text-sm border-b last:border-none">
+                  <td className="py-3 flex items-center gap-3">
+                    <div className="w-8 h-8 rounded-full bg-gray-100"></div>
+                    <span className="text-blue-500">{invoice.customer}</span>
+                  </td>
+                  <td className="text-orange-500">{invoice.product}</td>
+                  <td className="text-green-500">{invoice.invoice}</td>
+                  <td>{invoice.price}</td>
+                  <td>
+                    <span
+                      className={`text-xs py-1 px-3 rounded-full ${
+                        statusColors[invoice.status]
+                      }`}
+                    >
+                      {invoice.status}
+                    </span>
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+        <div className="bg-white shadow rounded-lg p-6">
+          <h2 className="text-lg font-semibold mb-4">Top Selling Product</h2>
+          <table className="w-full text-left">
+            <thead>
+              <tr className="text-gray-500 text-sm">
+                <th className="py-2">Product</th>
+                <th>Price</th>
+                <th>Discount</th>
+                <th>Sold</th>
+                <th>Source</th>
+              </tr>
+            </thead>
+            <tbody>
+              {products.map((product, index) => (
+                <tr key={index} className="text-sm border-b last:border-none">
+                  <td className="py-3 flex items-center gap-3">
+                    <div className="w-8 h-8 rounded-full bg-gray-100"></div>
+                    <span>{product.name}</span>
+                  </td>
+                  <td>{product.price}</td>
+                  <td className="text-green-500">{product.discount}</td>
+                  <td>{product.sold}</td>
+                  <td className={sourceColors[product.source]}>
+                    {product.source}
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div className="flex gap-5">
+        <div style={{ height: "100vh", width: "100%" }}>
+          <GoogleMapReact
+            bootstrapURLKeys={{ key: "" }}
+            defaultCenter={defaultProps.center}
+            defaultZoom={defaultProps.zoom}
+          >
+            <AnyReactComponent
+              lat={59.955413}
+              lng={30.337844}
+              text="My Marker"
+            />
+          </GoogleMapReact>
+        </div>
       </div>
     </div>
   );
