@@ -225,8 +225,8 @@ const SalesP = () => {
           <div className="flex flex-col gap-3 ">
             <h1 className="text-2xl text-white font-semibold">Dashboard</h1>
             <h3 className="text-white text-sm flex items-center gap-2">
-              Salessa <PiGreaterThan className="text-sm" /> Dashboard{" "}
-              <PiGreaterThan className="text-sm" /> Sales
+              Salessa <PiGreaterThan className="text-xs" /> Dashboard{" "}
+              <PiGreaterThan className="text-xs" /> Sales
             </h3>
           </div>
           <button className="px-7 py-3 text-sm rounded shadow-2xl mt-5  text-black bg-white group-hover::bg-blue-500">

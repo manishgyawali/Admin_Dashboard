@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { MdKeyboardArrowDown, MdKeyboardArrowRight } from "react-icons/md";
+import { MdKeyboardArrowDown, MdKeyboardArrowRight, MdOutlineWidgets, MdProductionQuantityLimits } from "react-icons/md";
 import logo from "../../../assets/Image/logo.png";
 import {
   FaHome,
@@ -18,6 +18,12 @@ import {
   FaFileAlt,
 } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import { IoCardOutline, IoHomeOutline } from "react-icons/io5";
+import { LiaMedkitSolid, LiaPagerSolid } from "react-icons/lia";
+import { CiCalendarDate, CiViewBoard, CiViewTable } from "react-icons/ci";
+import { PiInvoiceLight } from "react-icons/pi";
+import { LuComponent } from "react-icons/lu";
+import { GrMap } from "react-icons/gr";
 
 const Sidebar = () => {
   const [Show, setShow] = useState(null);
@@ -25,7 +31,7 @@ const Sidebar = () => {
   const sidebarData = [
     {
       title: "Dashboard",
-      icon: <FaHome className="text-[#64C5B1] " />,
+      icon: <IoHomeOutline  className="text-[#64C5B1] " />,
       subdata: [
         { title: "Sales", path: "/" },
         { title: "Default", path: "/defaultp" },
@@ -44,7 +50,7 @@ const Sidebar = () => {
     },
     {
       title: "UI Kits",
-      icon: <FaClipboardList className="text-[#64C5B1] " />,
+      icon: <LiaMedkitSolid  className="text-[#64C5B1] " />,
       subdata: [
         { title: "Colors", path: "/colors" },
         { title: "Alerts", path: "/alerts" },
@@ -70,21 +76,21 @@ const Sidebar = () => {
     },
     {
       title: "Board",
-      icon: <FaTrello className="text-[#64C5B1] " />,
+      icon: <CiViewBoard  className="text-[#64C5B1] " />,
       path: "/borderp",
     },
     {
       title: "Invoice",
-      icon: <FaFileInvoiceDollar className="text-[#64C5B1] " />,
+      icon: <PiInvoiceLight  className="text-[#64C5B1] " />,
       path: "/invoicep",
     },
     {
       title: "Calander",
-      icon: <FaCalendarAlt className="text-[#64C5B1] " />,
+      icon: <CiCalendarDate  className="text-[#64C5B1] " />,
     },
     {
       title: "Products",
-      icon: <FaBoxOpen className="text-[#64C5B1] " />,
+      icon: <MdProductionQuantityLimits  className="text-[#64C5B1] " />,
       subdata: [
         { title: "Products", path: "/productsp" },
         { title: "Product Details", path: "/productsdetailsp" },
@@ -103,7 +109,7 @@ const Sidebar = () => {
     },
     {
       title: "Components",
-      icon: <FaCog className="text-[#64C5B1] " />,
+      icon: <LuComponent  className="text-[#64C5B1] " />,
       subdata: [
         { title: "Accordians" },
         { title: "Scrollable" },
@@ -114,12 +120,12 @@ const Sidebar = () => {
     },
     {
       title: "Table",
-      icon: <FaThList className="text-[#64C5B1] " />,
+      icon: <CiViewTable  className="text-[#64C5B1] " />,
       subdata: [{ title: "Data Tables" }, { title: "Bootstrap" }],
     },
     {
       title: "Cards",
-      icon: <FaThList className="text-[#64C5B1] " />,
+      icon: <IoCardOutline  className="text-[#64C5B1] " />,
       subdata: [
         { title: "Basic Card" },
         { title: "Theme Card" },
@@ -128,17 +134,17 @@ const Sidebar = () => {
     },
     {
       title: "Widgets",
-      icon: <FaThList className="text-[#64C5B1] " />,
+      icon: <MdOutlineWidgets  className="text-[#64C5B1] " />,
       subdata: [{ title: "Chart Boxes 1" }, { title: "Profile Box" }],
     },
     {
       title: "Maps",
-      icon: <FaMapMarkedAlt className="text-[#64C5B1] " />,
+      icon: <GrMap  className="text-[#64C5B1] " />,
       subdata: [{ title: "Maps Js" }, { title: "Vector Maps" }],
     },
     {
       title: "Pages",
-      icon: <FaFileAlt className="text-[#64C5B1] " />,
+      icon: <LiaPagerSolid  className="text-[#64C5B1] " />,
       subdata: [
         { title: "Login" },
         { title: "Register" },
@@ -157,16 +163,16 @@ const Sidebar = () => {
           <img src={logo} alt="" className="h-[23px]" />
           <h1 className="font-semibold text-2xl">Salessa</h1>
         </div>
-        <div className="grid gap-6 text-lg">
+        <div className="grid gap-9 text-lg">
           {sidebarData.map((val, i) => (
             <div key={i}>
               {val.subdata ? (
                 <div
                   onClick={() => {
                     setShow(Show === i ? null : i)}}
-                  className="flex gap-4 justify-between items-center cursor-pointer"
+                  className="flex gap-5 justify-between items-center cursor-pointer"
                 >
-                  <div className="flex items-center gap-4">
+                  <div className="flex items-center gap-6">
                     {val.icon}
                     <h1>{val.title}</h1>
                   </div>
@@ -181,7 +187,7 @@ const Sidebar = () => {
                   to={val.path}
                   className="flex gap-10 justify-between items-center"
                 >
-                  <div className="flex items-center gap-4">
+                  <div className="flex items-center gap-6">
                     {val.icon}
                     <h1>{val.title}</h1>
                   </div>
