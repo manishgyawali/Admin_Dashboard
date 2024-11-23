@@ -2,9 +2,16 @@ import React from "react";
 import { PiDotsThreeBold, PiGreaterThan } from "react-icons/pi";
 import { FaArrowUp } from "react-icons/fa";
 import { Chart } from "react-google-charts";
+import {
+  Radar,
+  RadarChart,
+  PolarGrid,
+  PolarAngleAxis,
+  PolarRadiusAxis,
+} from "recharts";
+import { FaPiggyBank, FaGraduationCap, FaBuilding } from "react-icons/fa";
 
 import GoogleMapReact from "google-map-react";
-
 
 const AnyReactComponent = ({ text }) => <div>{text}</div>;
 
@@ -84,6 +91,32 @@ export const options = {
 };
 
 const SalesP = () => {
+  const totalsaleData = [
+    {
+      icon: <FaPiggyBank className="text-yellow-500 w-8 h-8" />,
+      title: "Cash Deposits",
+      value: "1.7M",
+      change: "-54.1%",
+      changeText: "less earnings",
+      changeColor: "text-red-500",
+    },
+    {
+      icon: <FaGraduationCap className="text-pink-500 w-8 h-8" />,
+      title: "Invested Dividends",
+      value: "9M",
+      change: "+14.1%",
+      changeText: "Grow Rate",
+      changeColor: "text-blue-500",
+    },
+    {
+      icon: <FaBuilding className="text-green-500 w-8 h-8" />,
+      title: "Capital Gains",
+      value: "$563",
+      change: "+7.35%",
+      changeText: "Increased by",
+      changeColor: "text-green-500",
+    },
+  ];
   const defaultProps = {
     center: {
       lat: 10.99835602,
@@ -147,6 +180,36 @@ const SalesP = () => {
     ["2018", 1170, 460],
     ["2019", 660, 1120],
     ["2020", 1030, 540],
+  ];
+  const productData = [
+    {
+      name: "Sport Shoe",
+      code: "#DE2548",
+      price: "$99.00",
+      sold: 354,
+      img: "https://images.unsplash.com/photo-1542291026-7eec264c27ff?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    },
+    {
+      name: "Unique Watch",
+      code: "#DE2548",
+      price: "$99.00",
+      sold: 354,
+      img: "https://images.unsplash.com/photo-1524805444758-089113d48a6d?q=80&w=1888&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    },
+    {
+      name: "Wireless Headphone",
+      code: "#DE2548",
+      price: "$99.00",
+      sold: 354,
+      img: "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    },
+  ];
+  const marketvalueData = [
+    { day: "Sunday", value: 100 },
+    { day: "Monday", value: 60 },
+    { day: "Tuesday", value: 70 },
+    { day: "Wednesday", value: 90 },
+    { day: "Thursday", value: 50 },
   ];
 
   const option = {
@@ -220,6 +283,7 @@ const SalesP = () => {
 
   return (
     <div className=" flex flex-col gap-5  bg-[#F3F4F3] ">
+     
       <div className="bg-[#64C5B1] py-5  ">
         <div className="flex justify-between items-start group-[]:  w-11/12 mx-auto ">
           <div className="flex flex-col gap-3 ">
@@ -233,6 +297,40 @@ const SalesP = () => {
             Create Report
           </button>
         </div>
+      </div>
+      <div className="bg-white shadow-md mx-6 rounded-lg p-6">
+        <div className="flex justify-between items-center mb-4">
+          <h2 className="text-lg font-semibold text-gray-700">
+            Portfolio Performance
+          </h2>
+          <button className="text-sm font-medium text-gray-600 hover:text-gray-800 border border-gray-600 px-4 py-1 rounded-md">
+            View All
+          </button>
+        </div>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
+          {totalsaleData.map((item, index) => (
+            <div key={index} className="flex items-center gap-4">
+              <div className="flex-shrink-0">
+                <div className="bg-gray-100 rounded-full p-4">{item.icon}</div>
+              </div>
+              <div className="flex flex-col gap-2">
+                <h3 className="text-sm font-medium text-gray-500">
+                  {item.title}
+                </h3>
+                <p className="text-5xl font-semibold text-gray-600">{item.value}</p>
+                <p className={`text-sm ${item.changeColor}`}>
+                  {item.change}{" "}
+                  <span className="text-gray-500">{item.changeText}</span>
+                </p>
+              </div>
+            </div>
+          ))}
+        </div>
+       <div className="flex justify-center">
+       <button className=" bg-orange-500 text-white font-semibold px-7 py-2 rounded-lg hover:bg-orange-600">
+          View Complete Report
+        </button>
+       </div>
       </div>
       <div className=" rounded-lg  flex gap-4 px-5">
         {/* Revenue Section */}
@@ -506,7 +604,7 @@ const SalesP = () => {
         </div>
       </div>
 
-      <div className="flex gap-5">
+      <div className="grid grid-cols-2 mx-6 gap-5">
         <div style={{ height: "100vh", width: "100%" }}>
           <GoogleMapReact
             bootstrapURLKeys={{ key: "" }}
@@ -519,6 +617,75 @@ const SalesP = () => {
               text="My Marker"
             />
           </GoogleMapReact>
+        </div>
+      </div>
+
+      <div className="flex   gap-5 mb-6 mx-6">
+        <div className="bg-white w-8/12 shadow-md rounded-lg p-5">
+          <h2 className="font-semibold mb-4">Popular Products</h2>
+          <table className="w-full text-left text-gray-600">
+            <thead>
+              <tr className="text-sm  font-semibold text-[#64C5B1]">
+                <th>Product</th>
+                <th>Product Code</th>
+                <th>Price</th>
+                <th>Status</th>
+              </tr>
+            </thead>
+            <tbody>
+              {productData.map((product, index) => (
+                <tr key={index} className="border-t">
+                  <td className="flex items-center gap-4 py-2">
+                    <img
+                      src={product.img}
+                      alt={product.name}
+                      className="w-16 h-16 object-cover rounded-full"
+                    />
+                    <span className=" text-2xl text-[#64C5B1]">
+                      {product.name}
+                    </span>
+                  </td>
+                  <td className="py-2 text-blue-600">{product.code}</td>
+                  <td className="py-2 text-[#64C5B1]">{product.price}</td>
+                  <td className="py-2">
+                    <span className="bg-red-100 text-sm text-red-500 px-3 py-1 rounded">
+                      {product.sold} sold
+                    </span>
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+          <button className="mt-4  bg-blue-500 text-white px-5 py-2 rounded-lg">
+            View All
+          </button>
+        </div>
+
+        <div className="bg-white w-4/12 shadow-md  rounded-lg p-5">
+          <div className="flex justify-between items-center mb-4">
+            <h2 className=" font-semibold">Market Value</h2>
+            <select className="bg-gray-100 p-2 rounded-lg">
+              <option>Year</option>
+            </select>
+          </div>
+          <div className="">
+            <RadarChart
+              outerRadius={90}
+              width={300}
+              height={250}
+              data={marketvalueData}
+            >
+              <PolarGrid />
+              <PolarAngleAxis dataKey="day" />
+              <PolarRadiusAxis angle={30} domain={[0, 100]} />
+              <Radar
+                dataKey="value"
+                stroke="#00C49F"
+                fill="#00C49F"
+                fillOpacity={0.6}
+              />
+            </RadarChart>
+          </div>
         </div>
       </div>
     </div>

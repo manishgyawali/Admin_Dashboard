@@ -161,16 +161,16 @@ const Sidebar = () => {
       <aside className="flex flex-col gap-10 py-4 px-10">
         <div className="flex items-center gap-2">
           <img src={logo} alt="" className="h-[23px]" />
-          <h1 className="font-semibold text-2xl">Salessa</h1>
+          <h1 className="font-semibold text-2xl font-mono tracking-tight ">Salessa</h1>
         </div>
-        <div className="grid gap-9 text-lg">
+        <div className="grid gap-9 text-lg  font-thin tracking-wider ">
           {sidebarData.map((val, i) => (
             <div key={i}>
               {val.subdata ? (
                 <div
                   onClick={() => {
                     setShow(Show === i ? null : i)}}
-                  className="flex gap-5 justify-between items-center cursor-pointer"
+                  className="flex gap-1 justify-between items-center cursor-pointer"
                 >
                   <div className="flex items-center gap-6">
                     {val.icon}
